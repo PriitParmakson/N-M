@@ -50,14 +50,18 @@ updateMap(config.map);
 initBasemaps(config.basemaps);
 
 // Abif-d.
+// Katastriüksuse teabekast.
 function katPopup(feature, layer) {
   var content = feature.properties.TUNNUS + " " + 
   feature.properties.ASUKOHT;
   layer.bindPopup(content);
 }
 
-function onEachFeature(feature, layer) {
-  layer.bindPopup(feature.properties.nimi);
+// Kaitsealade teabekast.
+function kaitsePopup(feature, layer) {
+  console.log("kaitsePopup");
+  var content = feature.properties.nimi;
+  layer.bindPopup(content);
 }
 
 // Katastriüksused.
@@ -125,8 +129,7 @@ MKA = L.geoJSON(MKA_GeoJSON, {
     fillColor: 'green',
     fillOpacity: 0
   },
-  interactive: false
-  // onEachFeature: onEachFeature,
+  onEachFeature: kaitsePopup
 }).addTo(map);
 
 // Lisa Harku metsa kaitseala piir
@@ -141,8 +144,7 @@ HARKU = L.geoJSON(HARKU__GeoJSON, {
     fillColor: 'green',
     fillOpacity: 0
   },
-  interactive: false
-  // onEachFeature: onEachFeature,
+  onEachFeature: kaitsePopup
 }).addTo(map);
 
 // Lisa Riigiomand
