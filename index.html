@@ -52,7 +52,7 @@
     <!-- 10% -->
 
     <div class="Pealkiri">
-      Nõmme-Mustamäe elu- ja looduskeskkonna kaitseks
+      Nõmme-Mustamäe looduskaart
     </div>
 
     <!--
@@ -96,22 +96,24 @@
         <label class="pure-material-switch">
           <input type="checkbox" id="MO" name="MO" onclick="switchMO()">
           <span>Munitsipaalomand</span>
-        </label>
-      </div>
-
+        </label>  
+      </div>  
+      
       <!-- Avalik-õiguslik omand -->
       <div>
         <label class="pure-material-switch">
-          <span>Avalik-õiguslik omand</span>
           <input type="checkbox" id="AO" name="AO" onclick="switchAO()">
+          <span>Avalik-õiguslik omand</span>
         </label>
       </div>
 
       <!-- Eraomand -->
       <div>
         <label class="pure-material-switch">
-          <span>Eraomand</span>
+          <!-- Oluline: input enne span-i - muidu lülitamine küll töötab,
+            kuid lüliti värv ei vahetu. -->
           <input type="checkbox" id="EO" name="EO" onclick="switchEO()">
+          <span>Eraomand</span>
         </label>
       </div>
     </div>

@@ -1,4 +1,4 @@
-Nõmme-Mustamäe loodus- ja elukeskkonna kaitse kaart
+Nõmme-Mustamäe looduskaart
 
 https://priitparmakson.github.io/N-M
 
