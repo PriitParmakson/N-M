@@ -28,7 +28,7 @@ var map = L.map(
   {
     crs: crs,
     center: L.latLng(59.391539, 24.683006),
-    zoom: 15, // Oli: 7.
+    zoom: 15, // Oli: 15.
     minZoom: 3,
     maxZoom: 24,
     maxBounds: L.latLngBounds(
@@ -36,6 +36,15 @@ var map = L.map(
       [62.85582385242469, 35.106036681873526]]),
   }
 );
+
+var config =
+{
+  "map": { "minZoom": 3, "maxZoom": 14, "title": "N-M MKA" },
+  "basemaps": ["hybrid", "piirid", "kaart"],
+  "thema": [
+    {}
+  ]
+};
 
 var baselayers = {};
 var overlays = {};
@@ -45,9 +54,16 @@ layerControl.addTo(map);
 
 var aboutWindow = L.control.about();
 
-updateMap(config.map);
+// updateMap(config.map);
 
 initBasemaps(config.basemaps);
+
+/* setInterval(function(){
+  map.setZoom(11);
+  setTimeout(function(){
+      map.setZoom(14);
+  }, 2000);
+}, 4000); */
 
 // Abif-d.
 // Katastriüksuse teabekast.
@@ -214,6 +230,9 @@ EO = L.geoJSON(OBJ_Eraomand, {
   },
   onEachFeature: katPopup,
 });
+
+console.log("setZoom(11)");
+map.setZoom(11);
 
 // Lülitikäsitlejad
 // MKA
